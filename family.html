@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Family | My Portfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <div class="logo">MY STORY</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="biodata.html">Biodata</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="family.html" class="active">Family</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="family-section">
+    <h2>My Family</h2>
+
+    <div class="family-cards">
+
+      <div class="family-card fade-in">
+        <img src="images/ayah.jpg" alt="Ayah">
+        <h3>Khuzairi bin Khalil</h3>
+        <p>My supportive and hardworking father.</p>
+      </div>
+
+      <div class="family-card fade-in">
+        <img src="images/ibu.jpg" alt="Ibu">
+        <h3>Roziawati binti Razali</h3>
+        <p>My queen in our life.</p>
+      </div>
+
+      <div class="family-card fade-in">
+        <img src="images/kakak.jpg" alt="Kakak">
+        <h3>Farah Nadhirah</h3>
+        <p>My older sister who inspires me to grow.</p>
+      </div>
+
+      <div class="family-card fade-in">
+        <img src="images/fik.jpg" alt="Adik">
+        <h3>Fikri Hakim</h3>
+        <p>This is who I am, the best big brother anyone could ask for.</p>
+      </div>
+
+      <div class="family-card fade-in">
+        <img src="images/haziq.jpg" alt="bg">
+        <h3>Fitri Haziq</h3>
+        <p>My first little sibling a bit unpredictable at times!.</p>
+      </div>
+
+      <div class="family-card fade-in">
+        <img src="images/fatin.jpg" alt="Adk">
+        <h3>Fatin Natasha</h3>
+        <p>The youngest one in the family always protected by his big brothers.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Fikri Semboi. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+
+    const appearOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
+
+</body>
+</html>

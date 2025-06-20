@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Education | My Portfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <div class="logo">MY STORY</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="biodata.html">Biodata</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="education.html" class="active">Education</a></li>
+        <li><a href="family.html">Family</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="education-section">
+    <h2>My Education</h2>
+
+    <div class="edu-timeline">
+
+      <div class="edu-item left fade-in">
+        <div class="edu-content">
+          <img src="images/smk24.png" alt="High School">
+          <div class="edu-text">
+            <h3>SMK Seksyen 24(2)</h3>
+            <span>2020 - 2022</span>
+            <p>This is where I sat for my SPM, choosing Computer Science as my stream.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="edu-item right fade-in">
+        <div class="edu-content">
+          <img src="images/KTESA.jpeg" alt="STPM">
+          <div class="edu-text">
+            <h3>Kolej Tingkatan 6 Shah Alam</h3>
+            <span>2022 - 2024</span>
+            <p>During STPM, I chose Sports Science based on my own interest, and I truly enjoyed it as it is the course I am most passionate about after media.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="edu-item left fade-in">
+        <div class="edu-content">
+          <img src="images/UniMAP.png" alt="UniMAP">
+          <div class="edu-text">
+            <h3>Universiti Malaysia Perlis (UniMAP)</h3>
+            <span>2024 - Present</span>
+            <p>I am currently studying for a degree in Interactive Media Technology at UniMAP. Now at the end of my second semester, I am really enjoying this course as it is also one of my true passions.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Fikri Semboi. All rights reserved.</p>
+  </footer>
+  
+  <script>
+  const faders = document.querySelectorAll('.fade-in');
+
+  const appearOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px"
+  };
+
+  const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('show');
+      observer.unobserve(entry.target);
+    });
+  }, appearOptions);
+
+  faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+  });
+</script>
+
+</body>
+</html>
